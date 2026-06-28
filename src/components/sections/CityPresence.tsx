@@ -1,5 +1,6 @@
 import { motion } from "framer-motion"
 import { QrCode, Building2, Plane, Hotel, UtensilsCrossed, Signpost } from "lucide-react"
+import { QRCodeSVG } from "qrcode.react"
 import { Badge } from "@/components/ui/badge"
 
 const touchpoints = [
@@ -114,23 +115,18 @@ export function CityPresence() {
               </p>
             </div>
 
-            {/* QR Code mockup */}
+            {/* QR Code */}
             <div className="flex justify-center">
               <div className="bg-white rounded-[var(--radius-xl)] p-6 shadow-[var(--shadow-xl)]">
-                <div className="w-40 h-40 bg-ink rounded-[var(--radius-md)] grid grid-cols-5 gap-1 p-3">
-                  {[...Array(25)].map((_, i) => (
-                    <div
-                      key={i}
-                      className={`rounded-sm ${
-                        [0, 1, 2, 4, 5, 6, 10, 14, 18, 19, 20, 22, 23, 24].includes(i)
-                          ? "bg-white"
-                          : "bg-transparent"
-                      }`}
-                    />
-                  ))}
-                </div>
+                <QRCodeSVG
+                  value="https://app.explore.tec.br"
+                  size={160}
+                  level="H"
+                  bgColor="#ffffff"
+                  fgColor="#1a1a2e"
+                />
                 <p className="text-center text-sm text-neutral-500 mt-3 font-medium">
-                  explore.tec.br
+                  app.explore.tec.br
                 </p>
               </div>
             </div>
